@@ -7,6 +7,7 @@ import {
   Param,
   ParseIntPipe,
   Patch,
+  Delete,
 } from '@nestjs/common';
 
 import { TasksService } from './tasks.service';
@@ -23,7 +24,7 @@ export class TasksController {
   }
 
   @Get()
-  getTask() {
+  listTask() {
     return this.tasksService.list();
   }
 
@@ -40,5 +41,10 @@ export class TasksController {
   @Patch(':id/incomplete')
   incompleteTask(@Param('id', ParseIntPipe) id: number) {
     return this.tasksService.incomplete(id);
+  }
+
+  @Delete(':id')
+  deleteTask(@Param('id', ParseIntPipe) id: number) {
+    return this.tasksService.delete(id);
   }
 }

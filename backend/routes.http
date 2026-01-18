@@ -16,13 +16,18 @@ PUT http://localhost:3000/tasks/2
 Content-Type: application/json
 
 {
-  "title": "Treino de Futsal"
+  "title": "Treino de Basquete",
+  "description": "Treino de Basquete às 11:00"
 }
 
 ###
 
-PATCH http://localhost:3000/tasks/3/complete
+PATCH http://localhost:3000/tasks/4/complete
 
 ###
 
-PATCH http://localhost:3000/tasks/3/incomplete
+PATCH http://localhost:3000/tasks/4/incomplete
+
+###
+
+DELETE http://localhost:3000/tasks/4

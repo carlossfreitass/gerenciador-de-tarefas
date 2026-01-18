@@ -26,4 +26,8 @@ export class TasksService {
   incomplete(id: number) {
     return this.tasksRepository.incomplete(id);
   }
+
+  delete(id: number) {
+    return this.tasksRepository.delete(id);
+  }
 }
