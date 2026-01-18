@@ -22,4 +22,8 @@ export class TasksService {
   complete(id: number) {
     return this.tasksRepository.complete(id);
   }
+
+  incomplete(id: number) {
+    return this.tasksRepository.incomplete(id);
+  }
 }

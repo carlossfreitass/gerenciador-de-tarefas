@@ -36,4 +36,9 @@ export class TasksController {
   completeTask(@Param('id', ParseIntPipe) id: number) {
     return this.tasksService.complete(id);
   }
+
+  @Patch(':id/incomplete')
+  incompleteTask(@Param('id', ParseIntPipe) id: number) {
+    return this.tasksService.incomplete(id);
+  }
 }

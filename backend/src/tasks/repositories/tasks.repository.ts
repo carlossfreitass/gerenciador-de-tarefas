@@ -43,4 +43,15 @@ export class TasksRepository {
 
     return complete;
   }
+
+  async incomplete(id: number) {
+    const incomplete = await this.prismaService.prisma.task.update({
+      where: { id },
+      data: {
+        completed: false,
+      },
+    });
+
+    return incomplete;
+  }
 }
