@@ -18,4 +18,8 @@ export class TasksService {
   edit(id: number, data: UpdateTaskDto) {
     return this.tasksRepository.edit(id, data);
   }
+
+  complete(id: number) {
+    return this.tasksRepository.complete(id);
+  }
 }

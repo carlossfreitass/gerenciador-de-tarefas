@@ -32,4 +32,15 @@ export class TasksRepository {
 
     return edit;
   }
+
+  async complete(id: number) {
+    const complete = await this.prismaService.prisma.task.update({
+      where: { id },
+      data: {
+        completed: true,
+      },
+    });
+
+    return complete;
+  }
 }

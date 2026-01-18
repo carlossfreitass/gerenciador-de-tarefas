@@ -6,6 +6,7 @@ import {
   Put,
   Param,
   ParseIntPipe,
+  Patch,
 } from '@nestjs/common';
 
 import { TasksService } from './tasks.service';
@@ -29,5 +30,10 @@ export class TasksController {
   @Put(':id')
   editTask(@Param('id', ParseIntPipe) id: number, @Body() data: UpdateTaskDto) {
     return this.tasksService.edit(id, data);
+  }
+
+  @Patch(':id/complete')
+  completeTask(@Param('id', ParseIntPipe) id: number) {
+    return this.tasksService.complete(id);
   }
 }

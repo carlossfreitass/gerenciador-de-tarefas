@@ -18,3 +18,7 @@ Content-Type: application/json
 {
   "title": "Treino de Futsal"
 }
+
+###
+
+PATCH http://localhost:3000/tasks/1/complete
