@@ -9,3 +9,12 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3000/tasks
+
+###
+
+PUT http://localhost:3000/tasks/2
+Content-Type: application/json
+
+{
+  "title": "Treino de Futsal"
+}

@@ -23,4 +23,13 @@ export class TasksRepository {
 
     return list;
   }
+
+  async edit(id: number, data: Prisma.TaskUpdateInput) {
+    const edit = await this.prismaService.prisma.task.update({
+      where: { id },
+      data: data,
+    });
+
+    return edit;
+  }
 }
