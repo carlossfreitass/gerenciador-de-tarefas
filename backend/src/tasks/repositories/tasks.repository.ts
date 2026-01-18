@@ -14,9 +14,7 @@ export class TasksRepository {
 
   async list() {
     return await this.prismaService.prisma.task.findMany({
-      orderBy: {
-        createdAt: 'asc',
-      },
+      orderBy: [{ completed: 'asc' }, { createdAt: 'asc' }],
     });
   }
 

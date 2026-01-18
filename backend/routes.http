@@ -2,7 +2,7 @@ POST http://localhost:3000/tasks
 Content-Type: application/json
 
 {
-  "title": "Treino de Futebol | Teste",
+  "title": "Treino de Futebol",
   "description": "Devo ir para o treino de futebol às 17:00"
 }
 
@@ -22,7 +22,7 @@ Content-Type: application/json
 
 ###
 
-PATCH http://localhost:3000/tasks/4/complete
+PATCH http://localhost:3000/tasks/1/complete
 
 ###
 
@@ -30,4 +30,4 @@ PATCH http://localhost:3000/tasks/4/incomplete
 
 ###
 
-DELETE http://localhost:3000/tasks/4
+DELETE http://localhost:3000/tasks/1
