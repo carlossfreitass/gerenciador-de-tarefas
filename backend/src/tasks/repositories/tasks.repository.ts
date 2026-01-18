@@ -6,21 +6,21 @@ import { Prisma } from '@prisma/client';
 export class TasksRepository {
   constructor(private prismaService: PrismaService) {}
 
-  async save(newTask: Prisma.TaskCreateInput) {
+  async create(data: Prisma.TaskCreateInput) {
     const sendTask = await this.prismaService.prisma.task.create({
-      data: newTask,
+      data: data,
     });
 
     return sendTask;
   }
 
-  async listAll() {
-    const listTask = await this.prismaService.prisma.task.findMany({
+  async list() {
+    const list = await this.prismaService.prisma.task.findMany({
       orderBy: {
         createdAt: 'asc',
       },
     });
 
-    return listTask;
+    return list;
   }
 }

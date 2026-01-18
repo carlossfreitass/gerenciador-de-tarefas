@@ -2,8 +2,8 @@ POST http://localhost:3000/tasks
 Content-Type: application/json
 
 {
-  "title": "Treino de Futebol",
-  "description": "Devo ir para o treino de futebol às 16:30"
+  "title": "Treino de Futebol | Teste",
+  "description": "Devo ir para o treino de futebol às 17:00"
 }
 
 ###

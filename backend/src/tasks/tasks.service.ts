@@ -7,15 +7,10 @@ export class TasksService {
   constructor(private readonly tasksRepository: TasksRepository) {}
 
   create(data: CreateTaskDto) {
-    const newTask = {
-      title: data.title,
-      description: data.description,
-    };
-
-    return this.tasksRepository.save(newTask);
+    return this.tasksRepository.create(data);
   }
 
   list() {
-    return this.tasksRepository.listAll();
+    return this.tasksRepository.list();
   }
 }
