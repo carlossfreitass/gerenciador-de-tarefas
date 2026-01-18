@@ -1,0 +1,11 @@
+POST http://localhost:3000/tasks
+Content-Type: application/json
+
+{
+  "title": "Treino de Futebol",
+  "description": "Devo ir para o treino de futebol às 16:30"
+}
+
+###
+
+GET http://localhost:3000/tasks
