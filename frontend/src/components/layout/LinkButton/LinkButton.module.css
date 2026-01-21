@@ -1,0 +1,17 @@
+.btn {
+  background-color: #9f3c2e;
+  color: #fff;
+  padding: 0.8em 1em;
+  text-decoration: none;
+  transition: 0.5s;
+  width: 50%;
+  border-radius: 10px;
+  margin: 10px auto;
+  text-align: center;
+  font-family: 'Comfortaa', 'sans-serif';
+  font-size: 1.2em;
+}
+
+.btn:hover {
+  text-decoration: underline;
+}

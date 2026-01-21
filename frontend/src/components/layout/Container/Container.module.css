@@ -3,9 +3,8 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 30px auto;
+  margin: 30px auto 0;
   flex-wrap: wrap;
-  padding: 0 16px;
 }
 
 .min-height {
