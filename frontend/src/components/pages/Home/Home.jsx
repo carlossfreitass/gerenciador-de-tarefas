@@ -1,4 +1,4 @@
-import { IoMdAdd } from "react-icons/io";
+import { IoMdAdd } from "react-icons/io"
 import LinkButton from '../../layout/LinkButton/LinkButton'
 import styles from './Home.module.css'
 

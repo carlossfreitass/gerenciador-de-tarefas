@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'BilyaLayared';
+  src: url('/fonts/Bilya-Layared.ttf') format('truetype');
+}
+
+.header_container {
+  font-family: 'BilyaLayared', 'sans-serif';
+}

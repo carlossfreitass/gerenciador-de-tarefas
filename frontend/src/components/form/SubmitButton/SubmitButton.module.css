@@ -1,18 +1,18 @@
 .btn {
   background-color: #9f3c2e;
   color: #fff;
-  padding: 0.8em 1em;
+  padding: 0.7em 1.2em;
   text-decoration: none;
-  transition: 0.5s;
+  transition: .5s;
+  cursor: pointer;
+  border: 5px;
   width: 100%;
-  border-radius: 10px;
-  margin: 10px auto;
-  text-align: center;
+  border-radius: 5px;
+  font-size: 1em;
   font-family: 'Comfortaa', 'sans-serif';
-  font-size: 1.2em;
 }
 
 .btn:hover {
-  text-decoration: underline;
   filter: drop-shadow(0 0 6px rgba(227, 95, 78, 0.3));
+  text-decoration: underline;
 }

@@ -1,6 +1,12 @@
+@font-face {
+  font-family: 'BilyaLayared';
+  src: url('/fonts/Bilya-Layared.ttf') format('truetype');
+}
+
 .footer {
   padding: 3em;
   text-align: center;
+  font-family: 'BilyaLayared', 'sans-serif';
 }
 
 .social_list {

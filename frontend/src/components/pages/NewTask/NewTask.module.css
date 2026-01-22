@@ -1,0 +1,15 @@
+.newtask_container {
+  width: 600px;
+  margin: 0 auto;
+  padding: 3em;
+  font-family: 'Comfortaa', 'sans-serif';
+  font-size: 1.2em;
+}
+
+.newtask_container h1 {
+  margin-bottom: 0.5em;
+}
+
+.newtask_container p {
+  color: #b6b4b4;
+}
