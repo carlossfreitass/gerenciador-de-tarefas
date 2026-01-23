@@ -28,11 +28,12 @@ function Home() {
   }, [])
 
   useEffect(() => {
-    fetch('http://localhost:3000/tasks', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
+    loadTasks()
+  }, [])
+
+  function loadTasks() {
+    fetch(`http://localhost:3000/tasks`, {
+      method: 'GET'
     })
     .then(resp => resp.json())
     .then(data => {
@@ -40,14 +41,11 @@ function Home() {
       setRemoveLoading(true)
     })
     .catch((err) => console.log(err))
-  }, [])
+  }
 
   function removeProject(id) {
     fetch(`http://localhost:3000/tasks/${id}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json'
-      }
+      method: 'DELETE'
     })
     .then(resp => resp.json())
     .then(() => {
@@ -71,6 +69,8 @@ function Home() {
               title={project.title}
               key={project.id}
               handleRemove={removeProject}
+              handleTaskStatusChange={loadTasks}
+              completed={project.completed}
             />
           ))
         }
