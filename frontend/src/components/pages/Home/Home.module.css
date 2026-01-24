@@ -9,3 +9,7 @@
   width: 100%;
   margin: 6px auto;
 }
+
+.home_container p {
+  font-family: 'Comfortaa', 'sans-serif';
+}
