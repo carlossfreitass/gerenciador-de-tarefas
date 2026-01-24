@@ -40,7 +40,7 @@ function TaskCard({id, title, handleRemove, handleTaskStatusChange, completed })
         <p>{title}</p>
       )}
       <div className={styles.task_card_actions}>
-        <Link className={styles.task_card_description} to='/description'>
+        <Link className={styles.task_card_description} to={`/description/${id}`}>
           <MdOutlineDescription />
         </Link>
         <Link className={styles.task_card_edit} to={`/task/${id}`}>

@@ -22,7 +22,7 @@ function App() {
           <Route exact path='/' element={<Home />}></Route>
           <Route path='/newtask' element={<NewTask />}></Route>
           <Route path='/task/:id' element={<EditTask />}></Route>
-          <Route path='/description' element={<Description />}></Route>
+          <Route path='/description/:id' element={<Description />}></Route>
         </Routes>
       </Container>
 
