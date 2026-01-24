@@ -31,7 +31,7 @@ function Description() {
   }, [])
 
   return (
-    <div className={styles.newtask_container}>
+    <div className={styles.container}>
       <h1>{task.title}</h1>
       {!removeLoading && <Loading />}
       <TextArea 

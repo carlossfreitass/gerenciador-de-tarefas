@@ -23,7 +23,7 @@ function NewTask() {
   }
 
   return (
-    <div className={styles.newtask_container}>
+    <div className={styles.container}>
       <h1>Adicionar Tarefa</h1>
       <p>Tudo pronto para começar? Adicione sua tarefa abaixo.</p>
       <TaskForm handleSubmit={createPost} btnText='Adicionar Tarefa' />

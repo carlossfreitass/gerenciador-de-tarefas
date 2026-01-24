@@ -12,10 +12,10 @@ import { IoMdAdd } from "react-icons/io"
 import styles from './Home.module.css'
 
 function Home() {
-  const [projects, setProjects] = useState([])
+  const [tasks, setTasks] = useState([])
   const [removeLoading, setRemoveLoading] = useState(false)
   const [message, setMessage] = useState('')
-  const [projectMessage, setProjectMessage] = useState('')
+  const [taskMessage, setTaskMessage] = useState('')
 
   const location = useLocation()
 
@@ -36,7 +36,7 @@ function Home() {
     })
     .then(resp => resp.json())
     .then(data => {
-      setProjects(data)
+      setTasks(data)
       setRemoveLoading(true)
     })
     .catch((err) => console.log(err))
@@ -48,8 +48,8 @@ function Home() {
     })
     .then(resp => resp.json())
     .then(() => {
-      setProjects(projects.filter((project) => project.id !== id))
-      setProjectMessage('Tarefa removida com sucesso!')
+      setTasks(tasks.filter((tasks) => tasks.id !== id))
+      setTaskMessage('Tarefa removida com sucesso!')
     })
     .catch(err => console.log(err))
   }
@@ -59,23 +59,23 @@ function Home() {
       <LinkButton to='/newtask' icon={<IoMdAdd />} text='Adicionar Tarefa' />
       <hr />
       {message && <Message type="success" msg={message} />}
-      {projectMessage && <Message type="success" msg={projectMessage} />}
+      {taskMessage && <Message type="success" msg={taskMessage} />}
       <div>
-        {projects.length > 0 && 
-          projects.map((project) => (
+        {tasks.length > 0 && 
+          tasks.map((task) => (
             <TaskCard 
-              id={project.id}
-              title={project.title}
-              key={project.id}
+              id={task.id}
+              title={task.title}
+              key={task.id}
               handleRemove={removeProject}
               handleTaskStatusChange={loadTasks}
-              completed={project.completed}
+              completed={task.completed}
             />
           ))
         }
 
         {!removeLoading && <Loading />}
-        {removeLoading && projects.length === 0 && (
+        {removeLoading && tasks.length === 0 && (
           <p>Não há tarefas cadastradas!</p>
         )}
       </div>

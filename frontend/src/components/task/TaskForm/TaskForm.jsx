@@ -7,14 +7,14 @@ import SubmitButton from '../../form/SubmitButton/SubmitButton'
 
 import styles from './TaskForm.module.css'
 
-function TaskForm({ handleSubmit, btnText, projectData }) {
-  const [task, setTask] = useState(projectData || {})
+function TaskForm({ handleSubmit, btnText, taskData }) {
+  const [task, setTask] = useState(taskData || {})
 
   useEffect(() => {
-    if (projectData) {
-      setTask(projectData)
+    if (taskData) {
+      setTask(taskData)
     }
-  }, [projectData])
+  }, [taskData])
 
   const submit = (e) => {
     e.preventDefault()

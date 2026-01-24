@@ -8,7 +8,7 @@ import Loading from '../../layout/Loading/Loading'
 import styles from '../NewTask/NewTask.module.css'
 
 function EditTask() {
-  const [projects, setProjects] = useState({})
+  const [task, setTask] = useState({})
   const [removeLoading, setRemoveLoading] = useState(false)
 
   const { id } = useParams()
@@ -22,7 +22,7 @@ function EditTask() {
     .then((data) => {
       for (let task of data) {
         if (task.id == id) {
-          setProjects(task)
+          setTask(task)
           break
         }
       }
@@ -48,11 +48,11 @@ function EditTask() {
   }
 
   return (
-    <div className={styles.newtask_container}>
+    <div className={styles.container}>
       <h1>Editar Tarefa</h1>
       <p>Gostaria de corrigir algo? Edite sua tarefa abaixo.</p>
       {!removeLoading && <Loading />}
-      <TaskForm handleSubmit={editTask} btnText='Editar Tarefa' projectData={projects} />
+      <TaskForm handleSubmit={editTask} btnText='Editar Tarefa' taskData={task} />
     </div>
   )
 }
