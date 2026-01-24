@@ -15,9 +15,8 @@ function NewTask() {
       body: JSON.stringify(task)
     })
     .then((resp) => resp.json())
-    .then((data) => {
-      console.log(data)
-      const state = {message: "Projeto criado com sucesso!"}
+    .then(() => {
+      const state = {message: "Tarefa criada com sucesso!"}
       navigate('/', {state})
     })
     .catch((err) => console.log(err))

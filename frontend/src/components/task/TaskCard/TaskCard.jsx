@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import styles from './TaskCard.module.css'
 
@@ -39,12 +40,12 @@ function TaskCard({id, title, handleRemove, handleTaskStatusChange, completed })
         <p>{title}</p>
       )}
       <div className={styles.task_card_actions}>
-        <button className={styles.task_card_description}>
+        <Link className={styles.task_card_description} to='/description'>
           <MdOutlineDescription />
-        </button>
-        <button className={styles.task_card_edit}>
+        </Link>
+        <Link className={styles.task_card_edit} to={`/task/${id}`}>
           <BsPencil />
-        </button>
+        </Link>
         <button className={styles.task_card_remove} onClick={remove} >
           <BsFillTrashFill />
         </button>

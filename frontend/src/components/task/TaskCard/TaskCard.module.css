@@ -35,7 +35,7 @@
   margin-left: auto;
 }
 
-.task_card_actions button {
+.task_card_actions > * {
   margin-right: 20px;
   font-size: 1.2em;
 

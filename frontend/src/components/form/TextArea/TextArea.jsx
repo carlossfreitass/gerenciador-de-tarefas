@@ -1,6 +1,6 @@
 import styles from './TextArea.module.css'
 
-function TextArea({ textLabel, text, name, rows, placeholder, handleOnChange }) {
+function TextArea({ textLabel, text, name, rows, placeholder, handleOnChange, value }) {
   return (
     <div className={styles.form_control}>
       <label htmlFor={name}>{textLabel}:</label>
@@ -9,6 +9,8 @@ function TextArea({ textLabel, text, name, rows, placeholder, handleOnChange }) 
         rows={rows}
         placeholder={placeholder}
         onChange={handleOnChange}
+        value={value}
+        required
       >{text}</textarea>
     </div>
   )

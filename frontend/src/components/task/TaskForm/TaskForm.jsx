@@ -1,4 +1,5 @@
-import { useState } from 'react'
+/* eslint-disable react-hooks/set-state-in-effect */
+import { useEffect, useState } from 'react'
 
 import Input from '../../form/Input/Input'
 import TextArea from '../../form/TextArea/TextArea'
@@ -6,8 +7,14 @@ import SubmitButton from '../../form/SubmitButton/SubmitButton'
 
 import styles from './TaskForm.module.css'
 
-function TaskForm({ handleSubmit, btnText }) {
-  const [task, setTask] = useState({})
+function TaskForm({ handleSubmit, btnText, projectData }) {
+  const [task, setTask] = useState(projectData || {})
+
+  useEffect(() => {
+    if (projectData) {
+      setTask(projectData)
+    }
+  }, [projectData])
 
   const submit = (e) => {
     e.preventDefault()
@@ -29,6 +36,7 @@ function TaskForm({ handleSubmit, btnText }) {
         name='title'
         placeholder='Insira o título da tarefa'
         handleOnChange={handleChange}
+        value={task.title ? task.title : ''}
       />
       <TextArea 
         textLabel='Descrição da tarefa'
@@ -36,6 +44,7 @@ function TaskForm({ handleSubmit, btnText }) {
         placeholder='Insira a descrição da tarefa'
         handleOnChange={handleChange}
         rows='5'
+        value={task.description ? task.description : ''}
       />
       <SubmitButton text={btnText} />
     </form>

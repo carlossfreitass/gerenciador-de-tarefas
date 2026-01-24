@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 import Message from '../../layout/Message/Message'
-import Container from '../../layout/Container/Container'
 import Loading from '../../layout/Loading/Loading'
 import LinkButton from '../../layout/LinkButton/LinkButton'
 import TaskCard from '../../task/TaskCard/TaskCard'
@@ -50,7 +49,7 @@ function Home() {
     .then(resp => resp.json())
     .then(() => {
       setProjects(projects.filter((project) => project.id !== id))
-      setProjectMessage('Projeto removido com sucesso!')
+      setProjectMessage('Tarefa removida com sucesso!')
     })
     .catch(err => console.log(err))
   }
