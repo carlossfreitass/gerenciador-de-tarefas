@@ -6,3 +6,13 @@
 .header_container {
   font-family: 'BilyaLayared', 'sans-serif';
 }
+
+.link {
+  text-decoration: none;
+  color: #FFF;
+  transition: 0.5s ease;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
