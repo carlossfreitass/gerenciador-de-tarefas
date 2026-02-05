@@ -3,13 +3,15 @@
 ## Objetivo
 Desenvolver uma aplicação simples de gerenciamento de tarefas utilizando:
 - **Backend:** Node.js + NestJS  
-- **Frontend:** React ( utilizando Vite )  
+- **Frontend:** React ( utilizando Vite )
+- **Service:** Microsserviço em Python para sugestão de título de tarefas
 
 ---
 
 ## Estrutura de Pastas
     ├── backend/      → API RESTful (Node.js + NestJS + Postgres)
     ├── frontend/     → Aplicação Web (Vite + React + TypeScript)
+    └── services/     → Microsserviço em Python
 
 ---
 
@@ -30,6 +32,12 @@ Utilizamos algumas tecnologias no desenvolvimento do Gerenciador de Tarefas, por
 
 Primeiramente é importante fazer a instalação do Docker, ferramenta de virtualização de sistemas. Para isso, clique em `Download Docker Desktop` [neste link](https://www.docker.com/get-started).
 
+* Ollama
+
+O Ollama é a ferramenta utilizada para executar modelos de linguagem localmente, sendo responsável por fornecer a IA usada em algumas funcionalidades do Gerenciador de Tarefas. Para garantir o correto funcionamento da aplicação, é necessário que o Ollama esteja instalado no computador.
+
+Para realizar a instalação, acesse o site oficial do [Ollama](https://ollama.com/) e faça o download do instalador compatível com o seu sistema operacional. Após o download, execute o instalador e siga as instruções exibidas na tela até a conclusão do processo. Ao abri-lo, verifique se o modelo `gemma3:4b` esteja instalada.
+
 * Node.js
 
 O Node.js é uma plataforma de execução JavaScript utilizada para executar o backend da aplicação e gerenciar as dependências do projeto por meio do npm (Node Package Manager). Para o correto funcionamento do Gerenciador de Tarefas, é obrigatório que o Node.js esteja instalado na máquina.
@@ -41,6 +49,12 @@ Acesse o site oficial do [Node.js](https://nodejs.org/pt-br/download). Selecione
 O Git é um sistema de controle de versão utilizado para gerenciar o código-fonte do projeto e permitir a clonagem de repositórios. Para o correto funcionamento do Gerenciador de Tarefas, é necessário ter o Git instalado na máquina.
 
 Acesse o site oficial do [Git](https://git-scm.com/install/). Na página de download, selecione o seu sistema operacional. O instalador será baixado automaticamente. Após o download, execute o arquivo e siga as etapas do assistente de instalação, mantendo as configurações padrão recomendadas. Ao final do processo, o Git estará pronto para uso.
+
+* Python
+
+O Python é utilizado no projeto para executar serviços auxiliares da aplicação, incluindo a API desenvolvida com Flask. Para o correto funcionamento do Gerenciador de Tarefas, é obrigatório que o Python esteja instalado na máquina.
+
+Para realizar a instalação, acesse o site oficial do [Python](https://www.python.org/downloads/) e faça o download do instalador. Após o download, execute o instalador e siga as instruções exibidas na tela até a conclusão do processo.
 
 ## 2. Clonar repositório do sistema
 Todo o código fonte do Gerenciador de Tarefas encontra-se disponível aqui no GitHub. Para baixá-lo em seu computador, siga os passos a seguir:
@@ -55,7 +69,7 @@ Após clonar o repositório, execute os comandos abaixos **na raiz do projeto** 
 
 1. Instalar todas as dependências
 
-> Este comando irá instalar automaticamente as dependências do backend e do frontend. Portanto, deve ser utilizado apenas **uma** vez.
+> Este comando irá instalar automaticamente as dependências do backend, frontend e microsserviço. Portanto, deve ser utilizado apenas **uma** vez.
 
 ```
 npm run install:all
@@ -77,7 +91,15 @@ npm run docker:up
 npm run backend
 ```
 
-4. Iniciar o frontend (React)
+4. Iniciar o microsserviço (Python)
+
+> Este comando inicializa o microsserviço em Python necessário para a sugestão de título de tarefas com IA. Paa funcionamento do próprio, é obrigatório que o `Ollama` esteja aberto.
+
+```
+npm run services
+```
+
+5. Iniciar o frontend (React)
 
 > Em outro terminal, execute:
 
@@ -96,3 +118,5 @@ Ao finalizar o uso do projeto, para desligar os containers do banco de dados e e
 ```
 npm run docker:down
 ```
+
+Por fim, poderá realizar o encerramento do `Docker Desktop` e `Ollama`.
