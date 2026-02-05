@@ -4,14 +4,14 @@
 Desenvolver uma aplicação simples de gerenciamento de tarefas utilizando:
 - **Backend:** Node.js + NestJS  
 - **Frontend:** React ( utilizando Vite )
-- **Service:** Microsserviço em Python para sugestão de título de tarefas
+- **Service:** Microserviço em Python para sugestão de título de tarefas
 
 ---
 
 ## Estrutura de Pastas
     ├── backend/      → API RESTful (Node.js + NestJS + Postgres)
     ├── frontend/     → Aplicação Web (Vite + React + TypeScript)
-    └── services/     → Microsserviço em Python
+    └── services/     → Microserviço em Python
 
 ---
 
@@ -69,7 +69,7 @@ Após clonar o repositório, execute os comandos abaixos **na raiz do projeto** 
 
 1. Instalar todas as dependências
 
-> Este comando irá instalar automaticamente as dependências do backend, frontend e microsserviço. Portanto, deve ser utilizado apenas **uma** vez.
+> Este comando irá instalar automaticamente as dependências do backend, frontend e microserviço. Portanto, deve ser utilizado apenas **uma** vez.
 
 ```
 npm run install:all
@@ -91,9 +91,18 @@ npm run docker:up
 npm run backend
 ```
 
-4. Iniciar o microsserviço (Python)
+4. Iniciar o microserviço (Python)
 
-> Este comando inicializa o microsserviço em Python necessário para a sugestão de título de tarefas com IA. Paa funcionamento do próprio, é obrigatório que o `Ollama` esteja aberto.
+> Este comando inicializa o microserviço em Python necessário para a sugestão de título de tarefas com IA. Para funcionamento do próprio, é obrigatório que o `Ollama` esteja aberto.
+
+> Para a inicialização correta do microserviço é necessário que você crie na pasta `services` um arquivo `.env` com o seguinte conteúdo:
+
+```
+OLLAMA_URL=http://localhost:11434
+OLLAMA_MODEL=gemma3:4b
+```
+
+Após a criação da variável ambiente, em outro terminal execute:
 
 ```
 npm run services
