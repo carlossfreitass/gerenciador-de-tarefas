@@ -12,6 +12,10 @@ GET http://localhost:3000/tasks
 
 ###
 
+GET http://localhost:3000/tasks/suggest-title?description=preciso%20ir%20ao%20cinema%20com%20os%20amigos%20a%20noite
+
+###
+
 PUT http://localhost:3000/tasks/2
 Content-Type: application/json
 

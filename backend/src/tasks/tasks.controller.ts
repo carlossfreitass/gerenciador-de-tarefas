@@ -8,6 +8,7 @@ import {
   ParseIntPipe,
   Patch,
   Delete,
+  Query,
 } from '@nestjs/common';
 
 import { TasksService } from './tasks.service';
@@ -26,6 +27,11 @@ export class TasksController {
   @Get()
   listTask() {
     return this.tasksService.list();
+  }
+
+  @Get('suggest-title')
+  suggestTitle(@Query('description') description: string) {
+    return this.tasksService.suggest(description);
   }
 
   @Put(':id')
