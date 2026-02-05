@@ -93,7 +93,7 @@ npm run backend
 
 4. Iniciar o microsserviço (Python)
 
-> Este comando inicializa o microsserviço em Python necessário para a sugestão de título de tarefas com IA. Para funcionamento do próprio, é obrigatório que o `Ollama` esteja aberto. Além disso inicialização correta do microsserviço depende que você crie na pasta `services` um arquivo `.env` com o seguinte conteúdo:
+> Este comando inicializa o microsserviço em Python necessário para a sugestão de título de tarefas com IA. Para funcionamento do próprio, é obrigatório que o `Ollama` esteja aberto. Além disso, para a inicialização correta do microsserviço depende que você crie na pasta `services` um arquivo `.env` com o seguinte conteúdo:
 
 ```
 OLLAMA_URL=http://localhost:11434
