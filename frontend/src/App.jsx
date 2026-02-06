@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './components/pages/Home/Home'
 import NewTask from './components/pages/NewTask/NewTask'
 import EditTask from './components/pages/EditTask/EditTask'
-import Description from './components/pages/Description/Description'
 
 // Importa os componentes de layout
 import Container from './components/layout/Container/Container'
@@ -22,7 +21,6 @@ function App() {
           <Route exact path='/' element={<Home />}></Route>
           <Route path='/newtask' element={<NewTask />}></Route>
           <Route path='/task/:id' element={<EditTask />}></Route>
-          <Route path='/description/:id' element={<Description />}></Route>
         </Routes>
       </Container>
 

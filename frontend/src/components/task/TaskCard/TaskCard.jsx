@@ -6,7 +6,7 @@ import styles from './TaskCard.module.css'
 import { BsPencil, BsFillTrashFill } from 'react-icons/bs'
 import { MdOutlineDescription } from 'react-icons/md'
 
-function TaskCard({id, title, handleRemove, handleTaskStatusChange, completed }) {
+function TaskCard({id, title, handleRemove, handleTaskStatusChange, handleMessage, completed }) {
   const [isCheck, setIsCheck] = useState(completed || false)
   const type = completed ? 'complete' : 'incomplete'
 
@@ -18,6 +18,10 @@ function TaskCard({id, title, handleRemove, handleTaskStatusChange, completed })
   const handleCheckboxChange = (e) => {
     setIsCheck(e.target.checked)
     alterateStatus(id)
+  }
+
+  const message = () => {
+    handleMessage(id)
   }
 
   function alterateStatus(id) {
@@ -40,7 +44,7 @@ function TaskCard({id, title, handleRemove, handleTaskStatusChange, completed })
         <p>{title}</p>
       )}
       <div className={styles.task_card_actions}>
-        <Link className={styles.task_card_description} to={`/description/${id}`}>
+        <Link className={styles.task_card_description} onClick={message} >
           <MdOutlineDescription />
         </Link>
         <Link className={styles.task_card_edit} to={`/task/${id}`}>
