@@ -11,5 +11,44 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  backend:
+    build: ./backend
+    container_name: gerenciadordetarefas_backend
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://app:app@postgres:5432/tasks_db
+    depends_on:
+      - postgres
+      - services
+
+  frontend:
+    build: ./frontend
+    container_name: gerenciadordetarefas_frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: gerenciadordetarefas_ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama:/root/.ollama
+
+  services:
+    build: ./services
+    container_name: gerenciadordetarefas_services
+    ports:
+      - "5000:5000"
+    environment:
+      OLLAMA_URL: http://ollama:11434
+      OLLAMA_MODEL: gemma3:4b
+    depends_on:
+      - ollama
+
 volumes:
   pgdata:
+  ollama:

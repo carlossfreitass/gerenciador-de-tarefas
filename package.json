@@ -5,12 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install:all": "npm --prefix backend install && npm --prefix frontend install && cd services && python -m venv venv && venv\\Scripts\\python -m pip install -r requirements.txt",
-    "docker:up": "docker compose up -d",
+    "docker:up": "docker compose up -d --build",
     "docker:down": "docker compose down",
-    "backend": "cd backend && npm run start:dev",
-    "frontend": "cd frontend && npm run dev",
-    "services": "cd services && venv\\Scripts\\python -m flask run"
+    "ai:pull": "docker exec gerenciadordetarefas_ollama ollama pull gemma3:4b"
   },
   "repository": {
     "type": "git",

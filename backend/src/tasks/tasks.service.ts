@@ -22,7 +22,7 @@ export class TasksService {
       throw new Error('Description is required!');
     }
 
-    const url = `http://localhost:5000/suggest-title?description=${encodeURIComponent(description)}`;
+    const url = `http://services:5000/suggest-title?description=${encodeURIComponent(description)}`;
     const response = await fetch(url);
 
     if (!response.ok) {
