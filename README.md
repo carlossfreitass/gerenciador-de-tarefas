@@ -49,8 +49,6 @@ O Node.js é utilizado exclusivamente para a execução de scripts npm, que faci
 
 Para realizar sua instalação, acesse o site oficial do [Node](https://nodejs.org/pt-br/download).
 
-> O Node.js não é utilizado como runtime da aplicação, pois todo o sistema é executado dentro de containers Docker.
-
 * Git
 
 O Git é utilizado para clonar o repositório do projeto. Para realizar sua instalação, acesso o site oficial do [Git](https://git-scm.com/install/windows).
@@ -83,6 +81,26 @@ npm run ai:pull
 ```
 
 > Este comando deve ser executado apenas uma vez. O modelo de IA é armazenado em volume Docker e não será baixado novamente.
+
+3. Configuração das Variáveis de Ambiente
+
+> Para que o backend consiga se comunicar com o banco de dados, você deve configurar as credenciais de acesso localmente.
+
+> Na pasta backend, crie um arquivo chamado `.env`.
+
+> Utilize o seguinte modelo, substituindo pelos valores definidos em `docker-compose.yml`.
+
+```
+DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE?schema=public"
+```
+
+4. Iniciar o Prisma (apenas na primeira execução)
+
+> Este comando configura o Prisma ORM, gera o Client para integração com o banco de dados e aplica migrações iniciais.
+
+```
+npm run prisma:setup
+```
 
 ## 4. Acessar o Gerenciador de Tarefas
 
